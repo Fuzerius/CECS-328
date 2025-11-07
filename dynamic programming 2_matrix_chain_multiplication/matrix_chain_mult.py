@@ -113,7 +113,9 @@ def solve_file(filepath: str) -> int:
 
 def main():
     """Main function to process all data files."""
-    data_dir = "data"  # Data directory
+    # Resolve data directory relative to this script's location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(script_dir, "data")
     results = []
     
     print("Matrix Chain Multiplication Problem Solver")
